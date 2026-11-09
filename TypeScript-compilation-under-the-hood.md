@@ -1,5 +1,7 @@
 # What happens to TypeScript code under the hood during compilation (tsc), and what role does tsconfig.json play?
 
 When we write TypeScript, the code cannot run directly in JavaScript runtimes such as Browsers or nodejs, Because TypeScript adds type-level features such as  interface, type alias etc. Therefore TypeScript needs to be converted into JavaScript to run its code on node.js or Browsers.
+
 tsc or TypeScript compiler used to compile the TypeScript code. When we run tsc, the compiler first reads the source code and the project's tsconfig.json configuration. Then it parses the source code and builds an internal representation called Abstract Syntax Tree(AST). Then it checks type errors without changing the original code. After type checking, the compiler generates JavaScript file and removes TypeScript specific features like interface,  type alias. The generated JavaScript can also be transformed depending on the compiler options configuration in tsconfig.json file. 
+
 While the compiler checks type errors and transforms TS to JS, the tsconfig.json works as a project configuration file. tsconfig.json tells the  compiler which JavaScript version to target or what is source dir/out dir etc. For example if we target an older JavaScript version in tsconfig.json, the compiler can transform modern Syntax to older JavaScript Syntax supported by that version.
