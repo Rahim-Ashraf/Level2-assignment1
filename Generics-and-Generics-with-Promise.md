@@ -1,0 +1,8 @@
+# How do Generics work in TypeScript, and how do they help when working with asynchronous Promise<T> responses?
+
+## How do Generics work in TypeScript?
+Generics are type variables in TypeScript. Using Generics we can make reusable and flexible functions while maintaining type safety. For a flexible function, instead of using any which remove the type safety completely we can use Generics. It is a type parameter, and TypeScript can infer the generic type dynamically from the argument, and give us completely type safety while using a flexible function.
+for example, <T>(value:T) here value can receive number, string or any type but it will tell the compiler that the value type is T, so we won't lose the the benefit of type safety while working with reusable and flexible functions.
+
+## how do Generics help when working with asynchronous Promise<T> responses?
+Promise<T> represent a promise that produces a result of type T. Promise can be used with different kind of API response. Using Generics we can define expected type of a Promises resolved value. It can make the code more type safe and predictable while working with asynchronous Promises. For example, fetchData<T>('/api') TypeScript assume that the value of resolved data will be type T. So Generics help us with type safety and make the code more predictable and reusable while we are working with asynchronous Promise. However, Generics don't validate the actual data received in runtime it only provide compile-time type safety and type information.
